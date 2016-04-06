@@ -17,7 +17,7 @@ LoopBack's user/userIdentity/userCredential models and [passport](http://passpor
 
 ## Prerequisites
 
-Before starting this tutorial, make sure you have the following installed:
+asdasdBefore starting this tutorial, make sure you have the following installed:
 
 - Node
 - NPM

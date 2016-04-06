@@ -1,0 +1,2 @@
+# scoreboard-server
+ScoreBoard services

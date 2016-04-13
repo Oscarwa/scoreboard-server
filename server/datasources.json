@@ -6,10 +6,10 @@
 
   "scorepoint": {
     "connector": "mysql",
-    "host":"127.0.0.1",
+    "host":"127.11.233.2",
     "port":"3306",
     "database":"scorepoint",
-    "username":"root",
-    "password": "root"
+    "username":"admininlWdtj",
+    "password": "X-gu443e6Wuw"
   }
 }

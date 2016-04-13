@@ -7,31 +7,43 @@
     ]
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": true
   },
   "accessToken": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": false
   },
   "userCredential": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": false
   },
   "userIdentity": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "scorepoint",
     "public": false
+  },
+  "Team": {
+    "dataSource": "scorepoint",
+    "public": true
+  },
+  "Game": {
+    "dataSource": "scorepoint",
+    "public": true
+  },
+  "Match": {
+    "dataSource": "scorepoint",
+    "public": true
   }
 }

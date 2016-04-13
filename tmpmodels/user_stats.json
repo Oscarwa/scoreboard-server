@@ -1,0 +1,87 @@
+{
+  "name": "UserStats",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "scorepoint",
+      "table": "user_stats"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "username": {
+      "type": "String",
+      "required": false,
+      "length": 512,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "userName",
+        "dataType": "varchar",
+        "dataLength": 512,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "gameid": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "gameId",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "totalSets": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 19,
+      "scale": 0,
+      "mysql": {
+        "columnName": "total_sets",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": 19,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "winnerSets": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": 23,
+      "scale": 0,
+      "mysql": {
+        "columnName": "winner_sets",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 23,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 {
   "name": "Game",
   "options": {
-    "idInjection": false,
     "mysql": {
+      "idInjection": true,
       "schema": "scorepoint",
       "table": "game"
     }
@@ -14,7 +14,7 @@
       "length": null,
       "precision": 10,
       "scale": 0,
-      "id": 1,
+      "id": true,
       "mysql": {
         "columnName": "gameId",
         "dataType": "int",
@@ -25,7 +25,7 @@
       }
     },
     "active": {
-      "type": "Binary",
+      "type": "Boolean",
       "required": true,
       "length": null,
       "precision": 1,

@@ -27,7 +27,7 @@ module.exports = function(Game) {
           }, createGame)
         }
       }
-    });
+    })
 
     // app.models.UserHasTeam.findOne({'userid': globalId}, function(err, userTeamObj) {
     //   if(err) {
@@ -54,7 +54,7 @@ module.exports = function(Game) {
     //     }
     //   }
     // });
-    //}
+    }
 
   var createGame = function(err, _game) {
     if(err) {

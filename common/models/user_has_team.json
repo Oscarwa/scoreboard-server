@@ -1,6 +1,7 @@
 {
   "name": "UserHasTeam",
   "options": {
+    "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
       "table": "user_has_team"

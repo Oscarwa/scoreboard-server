@@ -1,14 +1,14 @@
 {
-  "name": "Game",
+  "name": "Lobby",
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "game"
+      "table": "Lobby"
     }
   },
   "properties": {
-    "gameid": {
+    "lobbyid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "gameId",
+        "columnName": "lobbyId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,44 +24,44 @@
         "nullable": "N"
       }
     },
-    "order": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 10,
-      "scale": 0,
-      "mysql": {
-        "columnName": "order",
-        "dataType": "int",
-        "dataLength": null,
-        "dataPrecision": 10,
-        "dataScale": 0,
-        "nullable": "Y"
-      }
-    },
-    "idmatch": {
-      "type": "Number",
+    "active": {
+      "type": "Binary",
       "required": true,
       "length": null,
-      "precision": 10,
-      "scale": 0,
+      "precision": 1,
+      "scale": null,
       "mysql": {
-        "columnName": "idmatch",
-        "dataType": "int",
+        "columnName": "active",
+        "dataType": "bit",
         "dataLength": null,
-        "dataPrecision": 10,
-        "dataScale": 0,
+        "dataPrecision": 1,
+        "dataScale": null,
         "nullable": "N"
       }
     },
-    "teamwinnerid": {
+    "created": {
+      "type": "Date",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "created",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "tournamentTournamentid": {
       "type": "Number",
       "required": false,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "teamWinnerId",
+        "columnName": "tournament_tournamentId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

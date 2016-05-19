@@ -42,6 +42,10 @@
     "dataSource": "scorepoint",
     "public": true
   },
+  "Lobby":{
+    "dataSource": "scorepoint",
+    "public": true
+  },
   "Match": {
     "dataSource": "scorepoint",
     "public": true

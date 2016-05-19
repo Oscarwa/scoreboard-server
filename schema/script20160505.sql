@@ -147,9 +147,9 @@ CREATE UNIQUE INDEX `name_UNIQUE` ON `scorepoint`.`tournament` (`name` ASC);
 -- -----------------------------------------------------
 -- Table `scorepoint`.`I`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `scorepoint`.`I` ;
+DROP TABLE IF EXISTS `scorepoint`.`lobby` ;
 
-CREATE TABLE IF NOT EXISTS `scorepoint`.`I` (
+CREATE TABLE IF NOT EXISTS `scorepoint`.`lobby` (
   `lobbyId` INT(11) NOT NULL AUTO_INCREMENT,
   `active` BIT(1) NOT NULL DEFAULT b'1' COMMENT 'The User Team table enable to support a team',
   `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

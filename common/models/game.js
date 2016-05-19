@@ -64,10 +64,6 @@ module.exports = function(Game) {
     }
   };
 
-  var getUserHasTeamList = function(err, _userHasTeam) {
-
-  };
-
   Game.remoteMethod('join', {
     http: {path:'/join', verb: 'get', status: 200, errorStatus: 400},
     description: 'Creates a new game or joins into an existing one.',

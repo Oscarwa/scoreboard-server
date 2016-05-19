@@ -16,14 +16,16 @@ module.exports = function(Lobby) {
         console.error(err0);
       } else {
         if(!!getLobby) {
-          cb(null, getLobby);
+          app.models.Match.find({'lobbyLobbyid': getLobby.lobbyId}, function(error1, matches) {
+            cb(null, matches);
+          });
         } else {
           Lobby.create({
             lobbyid: 0,
             active: true,
             created: (new Date()).toISOString(),
             tournamentTournamentid: 0
-          }, createLobby)
+          }, createLobby);
         }
       }
     });

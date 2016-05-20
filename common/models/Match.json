@@ -4,11 +4,11 @@
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "match"
+      "table": "Match"
     }
   },
   "properties": {
-    "idmatch": {
+    "matchid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "idmatch",
+        "columnName": "matchId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,14 +24,14 @@
         "nullable": "N"
       }
     },
-    "started": {
+    "startdate": {
       "type": "Date",
       "required": true,
       "length": null,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "started",
+        "columnName": "startDate",
         "dataType": "timestamp",
         "dataLength": null,
         "dataPrecision": null,
@@ -39,14 +39,29 @@
         "nullable": "N"
       }
     },
-    "lobbyLobbyid": {
+    "enddate": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "endDate",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lobbyid": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "Lobby_lobbyId",
+        "columnName": "lobbyId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

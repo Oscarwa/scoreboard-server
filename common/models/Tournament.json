@@ -1,14 +1,14 @@
 {
-  "name": "Team",
+  "name": "Tournament",
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "team"
+      "table": "Tournament"
     }
   },
   "properties": {
-    "idteam": {
+    "tournamentid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "idTeam",
+        "columnName": "tournamentId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,44 +24,59 @@
         "nullable": "N"
       }
     },
-    "pair": {
-      "type": "Boolean",
+    "name": {
+      "type": "String",
       "required": true,
-      "length": null,
-      "precision": 1,
+      "length": 255,
+      "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "pair",
-        "dataType": "bit",
-        "dataLength": null,
-        "dataPrecision": 1,
+        "columnName": "name",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
         "dataScale": null,
         "nullable": "N"
       }
     },
-    "active": {
-      "type": "Boolean",
+    "startdate": {
+      "type": "Date",
       "required": true,
       "length": null,
-      "precision": 1,
+      "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "active",
-        "dataType": "bit",
+        "columnName": "startDate",
+        "dataType": "date",
         "dataLength": null,
-        "dataPrecision": 1,
+        "dataPrecision": null,
         "dataScale": null,
         "nullable": "N"
       }
     },
-    "lobbyid": {
+    "enddate": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "endDate",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "pointvalue": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "lobbyId",
+        "columnName": "pointValue",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

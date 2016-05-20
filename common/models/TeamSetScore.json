@@ -1,14 +1,14 @@
 {
-  "name": "Teamrequest",
+  "name": "TeamSetScore",
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "teamRequest"
+      "table": "TeamSetScore"
     }
   },
   "properties": {
-    "idteamrequest": {
+    "teamsetscoreid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "idteamRequest",
+        "columnName": "teamSetScoreId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,14 +24,14 @@
         "nullable": "N"
       }
     },
-    "userEmiter": {
+    "score": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "user_emiter",
+        "columnName": "score",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -39,14 +39,14 @@
         "nullable": "N"
       }
     },
-    "userReceptor": {
+    "gameid": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "user_receptor",
+        "columnName": "gameId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -54,18 +54,18 @@
         "nullable": "N"
       }
     },
-    "datetime": {
-      "type": "Date",
+    "teamid": {
+      "type": "Number",
       "required": true,
       "length": null,
-      "precision": null,
-      "scale": null,
+      "precision": 10,
+      "scale": 0,
       "mysql": {
-        "columnName": "datetime",
-        "dataType": "timestamp",
+        "columnName": "teamId",
+        "dataType": "int",
         "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
         "nullable": "N"
       }
     }

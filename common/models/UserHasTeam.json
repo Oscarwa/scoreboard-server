@@ -1,14 +1,14 @@
 {
-  "name": "TeamHasMatch",
+  "name": "UserHasTeam",
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "team_has_match"
+      "table": "UserHasTeam"
     }
   },
   "properties": {
-    "idteam": {
+    "userid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "idTeam",
+        "columnName": "userId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,7 +24,7 @@
         "nullable": "N"
       }
     },
-    "idmatch": {
+    "teamid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -32,7 +32,7 @@
       "scale": 0,
       "id": 2,
       "mysql": {
-        "columnName": "idmatch",
+        "columnName": "teamId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

@@ -1,14 +1,14 @@
 {
-  "name": "Teamsetscore",
+  "name": "Game",
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "teamSetScore"
+      "table": "Game"
     }
   },
   "properties": {
-    "playersetscroreid": {
+    "gameid": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "playerSetScroreId",
+        "columnName": "gameId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,14 +24,29 @@
         "nullable": "N"
       }
     },
-    "score": {
+    "order": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "order",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "matchid": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "score",
+        "columnName": "matchId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -39,34 +54,19 @@
         "nullable": "N"
       }
     },
-    "setSetid": {
+    "winnerteamid": {
       "type": "Number",
-      "required": true,
+      "required": false,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "set_setId",
+        "columnName": "winnerTeamId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
         "dataScale": 0,
-        "nullable": "N"
-      }
-    },
-    "teamIdteam": {
-      "type": "Number",
-      "required": true,
-      "length": null,
-      "precision": 10,
-      "scale": 0,
-      "mysql": {
-        "columnName": "team_idTeam",
-        "dataType": "int",
-        "dataLength": null,
-        "dataPrecision": 10,
-        "dataScale": 0,
-        "nullable": "N"
+        "nullable": "Y"
       }
     }
   }

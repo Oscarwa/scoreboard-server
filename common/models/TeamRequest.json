@@ -1,14 +1,14 @@
 {
-  "name": "ChallengeRequest",
+  "name": "TeamRequest",
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "scorepoint",
-      "table": "challenge_request"
+      "table": "TeamRequest"
     }
   },
   "properties": {
-    "challengeRequestid": {
+    "idteamrequest": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -16,7 +16,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "challenge_requestid",
+        "columnName": "idteamRequest",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -24,14 +24,14 @@
         "nullable": "N"
       }
     },
-    "challengerId": {
+    "emiterteamid": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "challenger_id",
+        "columnName": "emiterTeamId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
@@ -39,18 +39,33 @@
         "nullable": "N"
       }
     },
-    "victimId": {
+    "receptorteamid": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 10,
       "scale": 0,
       "mysql": {
-        "columnName": "victim_id",
+        "columnName": "receptorTeamId",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,
         "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "creationdate": {
+      "type": "Date",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "creationDate",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
         "nullable": "N"
       }
     }

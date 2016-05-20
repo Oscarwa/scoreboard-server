@@ -12,22 +12,22 @@ module.exports = function(Lobby) {
     globalId = ctx.active.http.req.accessToken.__data.userId;
     //
     Lobby.findOne({'active': true}, {'order': 'created DESC'}, function(err0, getLobby) {
-      if(err0) {
-        console.error(err0);
-      } else {
-        if(!!getLobby) {
-          app.models.Match.find({'lobbyLobbyid': getLobby.lobbyId}, function(error1, matches) {
-            cb(null, matches);
-          });
-        } else {
-          Lobby.create({
-            lobbyid: 0,
-            active: true,
-            created: (new Date()).toISOString(),
-            tournamentTournamentid: 0
-          }, createLobby);
-        }
-      }
+      // if(err0) {
+      //   console.error(err0);
+      // } else {
+      //   if(!!getLobby) {
+      //     app.models.Match.find({'lobbyLobbyid': getLobby.lobbyId}, function(error1, matches) {
+      //       cb(null, matches);
+      //     });
+      //   } else {
+      //     Lobby.create({
+      //       lobbyid: 0,
+      //       active: true,
+      //       created: (new Date()).toISOString(),
+      //       tournamentTournamentid: 0
+      //     }, createLobby);
+      //   }
+      // }
     });
   }
 

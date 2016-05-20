@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `scorepoint` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `scorepoint`;
--- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
 --
--- Host: 127.0.0.1    Database: scorepoint
+-- Host: localhost    Database: scorepoint
 -- ------------------------------------------------------
 -- Server version	5.5.47-0ubuntu0.14.04.1
 
@@ -16,6 +14,11 @@ USE `scorepoint`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+DROP DATABASE IF EXISTS scorepoint;
+CREATE DATABASE scorepoint;
+
+use scorepoint;
 
 --
 -- Table structure for table `ACL`
@@ -508,13 +511,46 @@ CREATE TABLE `user_has_team` (
 -- Dumping data for table `user_has_team`
 --
 
-
-
 LOCK TABLES `user_has_team` WRITE;
 /*!40000 ALTER TABLE `user_has_team` DISABLE KEYS */;
 INSERT INTO `user_has_team` VALUES (1,1),(2,2);
 /*!40000 ALTER TABLE `user_has_team` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `user_stats`
+--
+
+DROP TABLE IF EXISTS `user_stats`;
+/*!50001 DROP VIEW IF EXISTS `user_stats`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `user_stats` (
+  `id` tinyint NOT NULL,
+  `username` tinyint NOT NULL,
+  `total_games` tinyint NOT NULL,
+  `wins` tinyint NOT NULL
+) ENGINE = InnoDB */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `user_stats`
+--
+
+/*!50001 DROP TABLE IF EXISTS `user_stats`*/;
+/*!50001 DROP VIEW IF EXISTS `user_stats`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `user_stats` AS select `u`.`id` AS `id`,`u`.`username` AS `username`,count(`g`.`gameId`) AS `total_games`,sum(if((`g`.`teamWinnerId` = `t`.`idTeam`),1,0)) AS `wins` from (((((`user` `u` join `user_has_team` `ut` on((`ut`.`userid` = `u`.`id`))) join `team` `t` on((`ut`.`idTeam` = `t`.`idTeam`))) join `lobby` `l` on((`l`.`lobbyId` = `t`.`lobbyId`))) join `match` `m` on((`m`.`Lobby_lobbyId` = `l`.`lobbyId`))) join `game` `g` on((`g`.`idmatch` = `m`.`idmatch`))) group by `u`.`id` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -525,4 +561,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-19 18:38:58
+-- Dump completed on 2016-05-20  1:19:53

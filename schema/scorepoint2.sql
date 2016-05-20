@@ -441,15 +441,19 @@ CREATE TABLE IF NOT EXISTS `scorepoint`.`user_stats` (`id` INT, `userName` INT, 
 -- -----------------------------------------------------
 -- View `scorepoint`.`user_stats`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `scorepoint`.`user_stats` ;
-DROP TABLE IF EXISTS `scorepoint`.`user_stats`;
-USE `scorepoint`;
-CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `scorepoint`.`user_stats` AS
-select `u`.`id` AS `id`,`u`.`userName` AS `userName`,
-`g`.`gameId` AS `gameId`,
-count(`s`.`setId`) AS `total_sets`,
-sum(if((`s`.`teamWinnerId` = `t`.`idTeam`),1,0)) AS `winner_sets`
-from ((((((`scorepoint`.`user` `u` join `scorepoint`.`user_has_team` `u_t` on((`u`.`id` = `u_t`.`userid`))) join `scorepoint`.`team` `t` on((`u_t`.`idTeam` = `t`.`idTeam`))) join `scorepoint`.`game` `g` on((`t`.`gameId` = `g`.`gameId`))) join `scorepoint`.`team_has_match` `t_m` on((`t`.`idTeam` = `t_m`.`idTeam`))) join `scorepoint`.`match` `m` on((`t_m`.`idmatch` = `m`.`idmatch`))) join `scorepoint`.`set` `s` on((`m`.`idmatch` = `s`.`idmatch`))) group by `m`.`idmatch`;
+CREATE VIEW `user_stats` AS
+SELECT
+u.id, u.username,
+COUNT(g.gameId) AS total_games,
+SUM( IF( g.teamWinnerId = t.idTeam,1,0 ) ) AS wins
+FROM user u
+INNER JOIN user_has_team ut ON ut.userid = u.id
+INNER JOIN team t ON ut.idTeam = t.idTeam
+INNER JOIN lobby l ON l.lobbyId = t.lobbyId
+INNER JOIN `match` m ON m.Lobby_lobbyId = l.lobbyId
+INNER JOIN game g ON g.idmatch = m.idmatch
+GROUP BY u.id
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

@@ -31,3 +31,5 @@ providers.json
 
 #ID's and MAC temporal files
 .DS_Store
+
+schema/*.bak

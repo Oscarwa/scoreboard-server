@@ -30,7 +30,7 @@
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "userName",
+        "columnName": "username",
         "dataType": "varchar",
         "dataLength": 512,
         "dataPrecision": null,
@@ -38,29 +38,14 @@
         "nullable": "Y"
       }
     },
-    "gameid": {
-      "type": "Number",
-      "required": true,
-      "length": null,
-      "precision": 10,
-      "scale": 0,
-      "mysql": {
-        "columnName": "gameId",
-        "dataType": "int",
-        "dataLength": null,
-        "dataPrecision": 10,
-        "dataScale": 0,
-        "nullable": "N"
-      }
-    },
-    "totalSets": {
+    "totalGames": {
       "type": "Number",
       "required": true,
       "length": null,
       "precision": 19,
       "scale": 0,
       "mysql": {
-        "columnName": "total_sets",
+        "columnName": "total_games",
         "dataType": "bigint",
         "dataLength": null,
         "dataPrecision": 19,
@@ -68,14 +53,14 @@
         "nullable": "N"
       }
     },
-    "winnerSets": {
+    "wins": {
       "type": "String",
       "required": false,
       "length": null,
       "precision": 23,
       "scale": 0,
       "mysql": {
-        "columnName": "winner_sets",
+        "columnName": "wins",
         "dataType": "decimal",
         "dataLength": null,
         "dataPrecision": 23,

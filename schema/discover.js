@@ -20,7 +20,7 @@ ds.discoverModelDefinitions({
     console.log(def.name + '\n');
 
     ds.discoverSchema(def.name, null, function (err, schema) {
-      fs.writeFile("../common/models/" + def.name + ".json",JSON.stringify(schema,null,2), function(err) {
+      fs.writeFile("../faemodels/" + def.name + ".json",JSON.stringify(schema,null,2), function(err) {
         if(err){
           console.log(err);
           return;
